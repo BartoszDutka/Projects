@@ -1,0 +1,101 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ALU is
+port (
+      A 			: in signed(15 downto 0); 				--operand 1
+      B 			: in signed(15 downto 0); 				--operand 2
+      Salu 		: in bit_vector(4 downto 0); 			--kod operacji
+      LDF 		: in bit;
+      clk 		: in bit;
+      Y 			: out signed (15 downto 0); 			--rezultat
+      C,Z,S 	: out std_logic; 							--flagi
+		HEX0		: out std_logic_vector(6 downto 0); --hex dla kodu operacji
+		HEX1		: out std_logic_vector(6 downto 0); --hex dla argumentu A
+		HEX2		: out std_logic_vector(6 downto 0); --hex dla argumentu B
+		HEX3		: out std_logic_vector(6 downto 0) 	--hex dla rezultatu
+);
+end entity;
+ 
+architecture rtl of ALU is
+
+signal codeToHex0 : std_logic_vector(3 downto 0); --kod operacji na HEX0
+signal AToHex1 	: std_logic_vector(3 downto 0); --arg A na HEX1
+signal BToHex2 	: std_logic_vector(3 downto 0); --arg B na HEX2
+signal YToHex3 	: std_logic_vector(3 downto 0); --rezultat na HEX3
+
+
+component hex_encoder is									
+port (
+		inhex	   	: in std_logic_vector(3 downto 0); -- 4bity wejscie
+		outhex 		: out std_logic_vector(6 downto 0) --7bitow wyswietlacz
+);
+end component;
+
+begin
+  process (Salu, A, B, clk)
+       variable res, AA, BB,CC: signed (16 downto 0);
+       variable CF,ZF,SF : std_logic;
+       begin
+         AA(16) := A(15);
+         AA(15 downto 0) := A;
+         BB(16) := B(15);
+         BB(15 downto 0) := B;
+         CC(0) := CF;
+         CC(16 downto 1) := "0000000000000000";
+         case Salu is
+             when "00000" => res := AA; --0
+             when "00001" => res := BB;  --1
+				 when "00010" => res := AA + BB; --2
+             when "00011" => res := AA - BB; --3 
+				 when "00100" => res := AA or BB; --4 
+             when "00101" => res := AA and BB; --5 
+				 when "00110" => res := AA xor BB; --6 
+             when "00111" => res := AA xnor BB; --7 
+				 when "01000" => res := not AA; --8 
+             when "01001" => res := -AA; --9
+				 when "01010" => res := "00000000000000000"; -- 10 
+				 when "01011" => res := AA + BB + CC; -- 11 
+				 when "01100" => res := AA - BB - CC; -- 12 
+				 when "01101" => res := AA + 1; -- 13 
+				 when "01110" => res := shift_left(AA, 1); -- 14 
+				 when "01111" => res := shift_right(AA, 1); -- 15
+				 
+				 when "10000" => res := not BB; -- 16
+				 when "10001" => res := AA nand BB; -- 17
+				 when "10010" => res := AA rol 1; -- 18
+				 when "10011" => res := AA ror 1; -- 19
+				 when "10100" => res := AA - 1; -- 20
+				 when others => res := "00000000000000000"; 
+				 
+             res(15 downto 0) := AA(16 downto 1);
+         end case;
+         Y <= res(15 downto 0);
+			YToHex3 <= std_logic_vector(res(3 downto 0)); --rezultat na HEX3
+         Z <= ZF;
+         S <= SF;
+         C <= CF;
+         if (clk'event and clk='1') then
+             if (LDF='1') then
+                 if (res = "00000000000000000") then ZF:='1';
+                 else ZF:='0';
+                 end if;
+             if (res(15)='1') then SF:='1';
+             else SF:='0'; end if;
+             CF := res(16) xor res(15);
+             end if;
+         end if;
+  end process;
+  
+  hex_encoder_0 : hex_encoder port map(inhex => codeToHex0, outhex => HEX0);
+  hex_encoder_1 : hex_encoder port map(inhex => AToHex1, outhex => HEX1);
+  hex_encoder_2 : hex_encoder port map(inhex => BToHex2, outhex => HEX2);
+  hex_encoder_3 : hex_encoder port map(inhex => YToHex3, outhex => HEX3);
+  
+ codeToHex0 <= to_stdlogicvector(Salu(3 downto 0));
+ AToHex1 <= std_logic_vector(A(3 downto 0));
+ BToHex2 <= std_logic_vector(B(3 downto 0));
+
+end rtl;
+
