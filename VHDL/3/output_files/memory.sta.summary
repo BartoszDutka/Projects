@@ -1,0 +1,89 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'RDin'
+Slack : -9.677
+TNS   : -145.557
+
+Type  : Slow 1200mV 85C Model Setup 'WRin'
+Slack : -2.615
+TNS   : -791.996
+
+Type  : Slow 1200mV 85C Model Hold 'RDin'
+Slack : -0.965
+TNS   : -10.411
+
+Type  : Slow 1200mV 85C Model Hold 'WRin'
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RDin'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Smar'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'WRin'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'RDin'
+Slack : -8.796
+TNS   : -131.960
+
+Type  : Slow 1200mV 0C Model Setup 'WRin'
+Slack : -2.455
+TNS   : -722.699
+
+Type  : Slow 1200mV 0C Model Hold 'RDin'
+Slack : -0.789
+TNS   : -8.012
+
+Type  : Slow 1200mV 0C Model Hold 'WRin'
+Slack : 0.137
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RDin'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Smar'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'WRin'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'RDin'
+Slack : -4.737
+TNS   : -69.619
+
+Type  : Fast 1200mV 0C Model Setup 'WRin'
+Slack : -0.826
+TNS   : -154.143
+
+Type  : Fast 1200mV 0C Model Hold 'RDin'
+Slack : -0.580
+TNS   : -6.834
+
+Type  : Fast 1200mV 0C Model Hold 'WRin'
+Slack : -0.200
+TNS   : -0.490
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'WRin'
+Slack : -3.000
+TNS   : -203.212
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Smar'
+Slack : -3.000
+TNS   : -3.079
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RDin'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

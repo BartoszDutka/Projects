@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Sat Jun 11 11:55:53 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : memory
+Top-level Entity Name : memory
+Family : Cyclone IV GX
+Total logic elements : 978
+    Total combinational functions : 978
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 116
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0

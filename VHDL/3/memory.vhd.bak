@@ -1,0 +1,72 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity memory is
+port
+(
+     ADR : in signed(31 downto 0);
+     DO : in signed(15 downto 0);
+     Smar, Smbr, WRin, RDin : in bit;
+     AD : out signed (31 downto 0);
+     DI : out signed(15 downto 0);
+     WR, RD : out bit;
+	  HEX0	: out std_logic_vector(6 downto 0); --hex dla AD
+	  HEX1	: out std_logic_vector(6 downto 0) --hex dla DI
+);
+end entity;
+
+architecture rtl of memory is
+
+type mem is array(0 to 31) of signed(15 downto 0);
+signal ram_block : mem;
+
+signal ADToHex0 : std_logic_vector(3 downto 0); --AD na HEX0
+signal DIToHex1 	: std_logic_vector(3 downto 0); --DI A na HEX1
+
+component hex_encoder is									
+port (
+		inhex	   	: in std_logic_vector(3 downto 0); -- 4bity wejscie
+		outhex 		: out std_logic_vector(6 downto 0) -- 7bitow wyswietlacz
+);
+end component;
+
+begin
+
+		 
+   process(Smar, ADR, Smbr, DO, WRin, RDin)
+           variable MBR: signed(15 downto 0);
+           variable MAR : signed(31 downto 0);
+			  	
+	begin
+        if(Smar='1') then
+			  MAR := ADR;
+		  end if;
+		  
+        if(Smbr='1') then
+		      MBR := DO;
+		  end if;
+		  
+        if (RDin='0') then
+		      MBR := ram_block(to_integer(MAR));
+		  end if;
+		  
+        if (WRin='1') then
+		      ram_block(to_integer(MAR)) <= MBR;
+        end if;
+		  
+		  
+        DI <= MBR;
+		  DIToHex1 <= std_logic_vector(MBR(3 downto 0));
+		  
+        AD <= MAR;
+		  ADToHex0 <= std_logic_vector(MAR(3 downto 0));
+		  
+        WR <= WRin;
+        RD <= RDin;	
+   end process;
+	
+	hex_encoder_0 : hex_encoder port map(inhex => ADToHex0, outhex => HEX0);
+	hex_encoder_1 : hex_encoder port map(inhex => DIToHex1, outhex => HEX1);	
+
+end rtl;

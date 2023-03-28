@@ -1,0 +1,475 @@
+Analysis & Synthesis report for memory
+Sat Jun 11 11:55:53 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jun 11 11:55:53 2022       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                      ; memory                                      ;
+; Top-level Entity Name              ; memory                                      ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 978                                         ;
+;     Total combinational functions  ; 978                                         ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 116                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CGX150DF31C7    ;                    ;
+; Top-level entity name                                            ; memory             ; memory             ;
+; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.1%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; memory.vhd                       ; yes             ; User VHDL File  ; C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd ;         ;
+; hex.vhd                          ; yes             ; User VHDL File  ; C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/hex.vhd    ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 116              ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; MAR[1]           ;
+; Maximum fan-out          ; 141              ;
+; Total fan-out            ; 3478             ;
+; Average fan-out          ; 2.87             ;
++--------------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+; |memory                    ; 978 (964)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 116  ; 0            ; |memory             ; memory      ; work         ;
+;    |hex:HEX1|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |memory|hex:HEX1    ; hex         ; work         ;
+;    |hex:HEX2|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |memory|hex:HEX2    ; hex         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; MAR[0]                                               ; Smar                ; yes                    ;
+; MAR[1]                                               ; Smar                ; yes                    ;
+; MAR[2]                                               ; Smar                ; yes                    ;
+; MAR[3]                                               ; Smar                ; yes                    ;
+; MAR[4]                                               ; Smar                ; yes                    ;
+; MAR[5]                                               ; Smar                ; yes                    ;
+; MAR[6]                                               ; Smar                ; yes                    ;
+; MAR[7]                                               ; Smar                ; yes                    ;
+; MAR[8]                                               ; Smar                ; yes                    ;
+; MAR[9]                                               ; Smar                ; yes                    ;
+; MAR[10]                                              ; Smar                ; yes                    ;
+; MAR[11]                                              ; Smar                ; yes                    ;
+; MAR[12]                                              ; Smar                ; yes                    ;
+; MAR[13]                                              ; Smar                ; yes                    ;
+; MAR[14]                                              ; Smar                ; yes                    ;
+; MAR[15]                                              ; Smar                ; yes                    ;
+; MAR[16]                                              ; Smar                ; yes                    ;
+; MAR[17]                                              ; Smar                ; yes                    ;
+; MAR[18]                                              ; Smar                ; yes                    ;
+; MAR[19]                                              ; Smar                ; yes                    ;
+; MAR[20]                                              ; Smar                ; yes                    ;
+; MAR[21]                                              ; Smar                ; yes                    ;
+; MAR[22]                                              ; Smar                ; yes                    ;
+; MAR[23]                                              ; Smar                ; yes                    ;
+; MAR[24]                                              ; Smar                ; yes                    ;
+; MAR[25]                                              ; Smar                ; yes                    ;
+; MAR[26]                                              ; Smar                ; yes                    ;
+; MAR[27]                                              ; Smar                ; yes                    ;
+; MAR[28]                                              ; Smar                ; yes                    ;
+; MAR[29]                                              ; Smar                ; yes                    ;
+; MAR[30]                                              ; Smar                ; yes                    ;
+; MAR[31]                                              ; Smar                ; yes                    ;
+; MBR[0]                                               ; MBR[15]             ; yes                    ;
+; MBR[1]                                               ; MBR[15]             ; yes                    ;
+; MBR[2]                                               ; MBR[15]             ; yes                    ;
+; MBR[3]                                               ; MBR[15]             ; yes                    ;
+; MBR[4]                                               ; MBR[15]             ; yes                    ;
+; MBR[5]                                               ; MBR[15]             ; yes                    ;
+; MBR[6]                                               ; MBR[15]             ; yes                    ;
+; MBR[7]                                               ; MBR[15]             ; yes                    ;
+; MBR[8]                                               ; MBR[15]             ; yes                    ;
+; MBR[9]                                               ; MBR[15]             ; yes                    ;
+; MBR[10]                                              ; MBR[15]             ; yes                    ;
+; MBR[11]                                              ; MBR[15]             ; yes                    ;
+; MBR[12]                                              ; MBR[15]             ; yes                    ;
+; MBR[13]                                              ; MBR[15]             ; yes                    ;
+; MBR[14]                                              ; MBR[15]             ; yes                    ;
+; MBR[15]                                              ; MBR[15]             ; yes                    ;
+; ram_block~160                                        ; rtl~0               ; yes                    ;
+; ram_block~144                                        ; rtl~1               ; yes                    ;
+; ram_block~128                                        ; rtl~2               ; yes                    ;
+; ram_block~176                                        ; rtl~3               ; yes                    ;
+; ram_block~80                                         ; rtl~4               ; yes                    ;
+; ram_block~96                                         ; rtl~5               ; yes                    ;
+; ram_block~64                                         ; rtl~6               ; yes                    ;
+; ram_block~112                                        ; rtl~7               ; yes                    ;
+; ram_block~32                                         ; rtl~8               ; yes                    ;
+; ram_block~16                                         ; rtl~9               ; yes                    ;
+; ram_block~0                                          ; rtl~10              ; yes                    ;
+; ram_block~48                                         ; rtl~11              ; yes                    ;
+; ram_block~208                                        ; rtl~12              ; yes                    ;
+; ram_block~224                                        ; rtl~13              ; yes                    ;
+; ram_block~192                                        ; rtl~14              ; yes                    ;
+; ram_block~240                                        ; rtl~15              ; yes                    ;
+; ram_block~352                                        ; rtl~16              ; yes                    ;
+; ram_block~416                                        ; rtl~17              ; yes                    ;
+; ram_block~288                                        ; rtl~18              ; yes                    ;
+; ram_block~480                                        ; rtl~19              ; yes                    ;
+; ram_block~400                                        ; rtl~20              ; yes                    ;
+; ram_block~336                                        ; rtl~21              ; yes                    ;
+; ram_block~272                                        ; rtl~22              ; yes                    ;
+; ram_block~464                                        ; rtl~23              ; yes                    ;
+; ram_block~320                                        ; rtl~24              ; yes                    ;
+; ram_block~384                                        ; rtl~25              ; yes                    ;
+; ram_block~256                                        ; rtl~26              ; yes                    ;
+; ram_block~448                                        ; rtl~27              ; yes                    ;
+; ram_block~432                                        ; rtl~28              ; yes                    ;
+; ram_block~368                                        ; rtl~29              ; yes                    ;
+; ram_block~304                                        ; rtl~30              ; yes                    ;
+; ram_block~496                                        ; rtl~31              ; yes                    ;
+; ram_block~97                                         ; rtl~5               ; yes                    ;
+; ram_block~81                                         ; rtl~4               ; yes                    ;
+; ram_block~65                                         ; rtl~6               ; yes                    ;
+; ram_block~113                                        ; rtl~7               ; yes                    ;
+; ram_block~145                                        ; rtl~1               ; yes                    ;
+; ram_block~161                                        ; rtl~0               ; yes                    ;
+; ram_block~129                                        ; rtl~2               ; yes                    ;
+; ram_block~177                                        ; rtl~3               ; yes                    ;
+; ram_block~17                                         ; rtl~9               ; yes                    ;
+; ram_block~33                                         ; rtl~8               ; yes                    ;
+; ram_block~1                                          ; rtl~10              ; yes                    ;
+; ram_block~49                                         ; rtl~11              ; yes                    ;
+; ram_block~225                                        ; rtl~13              ; yes                    ;
+; ram_block~209                                        ; rtl~12              ; yes                    ;
+; ram_block~193                                        ; rtl~14              ; yes                    ;
+; ram_block~241                                        ; rtl~15              ; yes                    ;
+; ram_block~337                                        ; rtl~21              ; yes                    ;
+; ram_block~401                                        ; rtl~20              ; yes                    ;
+; ram_block~273                                        ; rtl~22              ; yes                    ;
+; ram_block~465                                        ; rtl~23              ; yes                    ;
+; Number of user-specified and inferred latches = 560  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 116                         ;
+; cycloneiii_lcell_comb ; 990                         ;
+;     normal            ; 990                         ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 612                         ;
+;         4 data inputs ; 365                         ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.50                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Sat Jun 11 11:55:44 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off memory -c memory
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-compo File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 17
+    Info (12023): Found entity 1: memory File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hex.vhd
+    Info (12022): Found design unit 1: hex-test File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/hex.vhd Line: 11
+    Info (12023): Found entity 1: hex File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/hex.vhd Line: 3
+Info (12127): Elaborating entity "memory" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at memory.vhd(38): signal "ram_block" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at memory.vhd(27): inferring latch(es) for signal or variable "MAR", which holds its previous value in one or more paths through the process File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 27
+Warning (10631): VHDL Process Statement warning at memory.vhd(27): inferring latch(es) for signal or variable "MBR", which holds its previous value in one or more paths through the process File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 27
+Info (10041): Inferred latch for "MBR[0]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[1]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[2]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[3]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[4]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[5]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[6]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[7]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[8]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[9]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[10]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[11]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[12]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[13]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[14]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MBR[15]" at memory.vhd(37) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+Info (10041): Inferred latch for "MAR[0]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[1]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[2]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[3]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[4]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[5]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[6]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[7]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[8]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[9]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[10]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[11]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[12]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[13]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[14]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[15]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[16]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[17]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[18]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[19]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[20]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[21]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[22]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[23]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[24]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[25]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[26]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[27]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[28]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[29]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[30]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (10041): Inferred latch for "MAR[31]" at memory.vhd(31) File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 31
+Info (12128): Elaborating entity "hex" for hierarchy "hex:HEX1" File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 48
+Warning (13012): Latch MBR[0] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[1] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[2] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[3] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[4] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[5] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[6] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[7] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[8] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[9] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[10] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[11] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[12] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[13] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[14] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Warning (13012): Latch MBR[15] has unsafe behavior File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RDin File: C:/Users/Kacper/Desktop/Dutka_Fryt/LAB3/memory.vhd Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1094 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 52 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 978 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4889 megabytes
+    Info: Processing ended: Sat Jun 11 11:55:53 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+
