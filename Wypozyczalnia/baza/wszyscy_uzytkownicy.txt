@@ -1,0 +1,15 @@
+1;Bartosz;Dutka;Admin;bar711.bd@gmail.com;1234;21;1;1
+2;Bartosz;Dutka;User;bar711@gmail.com;1234;21;0;0
+3;Test;Test;Test;Test@gmail.com;1234;20;1;0
+4;Test2;Test2;Test2;Test2@gmail.com;1234;20;1;0
+5;Test3;Test3;Test3;Test3@gmail.com;1234;20;1;0
+6;Test4;Test4;Test4;Test4@gmail.com;1234;20;1;0
+7;Kacper;Fryt;Arax;kacper@gmail.com;1234;21;1;0
+8;Test5;Test5;Test5;Test5@gmail.com;1234;20;1;0
+9;Test6;Test6;Test6;Test6@gmail.com;1234;20;1;1
+10;Test8;Test8;Test8;Test8@gmail.com;1234;20;1;1
+11;Kacper;Fryt;kf;ka@gmail.com;1234;21;1;1
+12;Test7;Test7;Test7;Test7@gmail.com;1234;20;1;0
+13;Bartosz;Dut;BD;bd@gmail.com;1234;20;1;0
+14;Bartosz;D;Bartosz;Bartosz@gmail.com;1234;20;0;0
+15;Test10;Test10;Test10;Test10@gmail.com;1234;20;1;0
