@@ -1,3 +1,0 @@
-Laczna ilosc filmow w bazie danych: 8.
-Laczna ilosc wypozyczen filmow: 8.
-Laczna liczba zarejestrowanych uzytkownikow: 6.
